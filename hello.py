@@ -1,5 +1,4 @@
 import requests
-from streamlit_option_menu import option_menu
 from PIL import Image
 import streamlit as st
 
@@ -16,15 +15,6 @@ def local_css(file):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style.css")
-
-with st.sidebar:
-    selected = option_menu(
-        menu_title=None,
-        options=["Home", "Projects", "Contact"],
-        icons=["house", "book", "envelope"],
-        menu_icon="cast",
-        default_index=0,
-    )
     
 with st.container():
     left_columns, right_columns = st.columns(2)
