@@ -1,5 +1,4 @@
 import requests
-from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 from PIL import Image
 import streamlit as st
@@ -8,15 +7,9 @@ st.set_page_config(page_title="My First Web App Using Streamlit", page_icon=":ta
 
 image_login = Image.open("register-form-validator.png")
 image_modal = Image.open("create-modal.png")
+image_intro = Image.open("pexels-sebastiaan-stam-1097456.jpg")
 
-def load_lottieurl(url):
-    r = requests.get(url)
 
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-lottie_coding = load_lottieurl("https://lottie.host/3c375d04-57ce-426c-8643-64f50a600f38/DLMEtRfDtX.json")
 
 def local_css(file):
     with open(file) as f:
@@ -43,7 +36,7 @@ with st.container():
         st.write("[To know more about me](https://www.facebook.com/profile.php?id=100070906924722)")
 
     with right_columns:
-        st_lottie(lottie_coding, height=300, key="coding")
+        st.image(image_intro)
 
 with st.container():
     st.write("---")
